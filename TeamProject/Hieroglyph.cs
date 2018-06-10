@@ -12,5 +12,5 @@ namespace TeamProject
         public string ChineseWord { get; set; }
         public string Pinyin { get; set; }
         public string Translation { get; set; }
-    }
+    } 
 }
