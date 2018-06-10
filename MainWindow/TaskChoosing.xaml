@@ -1,0 +1,22 @@
+﻿<Window x:Class="HW2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW2"
+        mc:Ignorable="d"
+        Title="TaskChoosing" Height="450" Width="350">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image" HorizontalAlignment="Center" Height="250" Margin="0,50,0,0" VerticalAlignment="Top" Width="250" Source="https://img0.liveinternet.ru/images/attach/c/4/81/359/81359498_80753657_dragon25.png"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,25,0,0">What do you want to do today?</TextBlock>
+        <Button  Width="130" Height="70" Margin="0,50,160,80" Click="Hieroglyph_Click" Content="Choose the &#xD;&#xA;correct hieroglyph"/>
+            <Button  Width="130" Height="70" Margin="160,50,0,80" Click="Pinyin_Click" Content="Choose the &#xD;&#xA;correct pinyin"></Button>
+            <Button  Width="130" Height="70" Margin="0,180,160,0" Click="Translation_Click" Content="Choose the &#xD;&#xA;correct translation"></Button>
+            <Button  Width="130" Height="70" Margin="160,180,0,0" Click="Dictionary_Click" Content="Open my dictionary"></Button>
+            <Button  Width="50" Height="30" Margin="240,340,0,0" Click="Exit_Click" Content="Exit"></Button>
+    </Grid>
+</Window>
