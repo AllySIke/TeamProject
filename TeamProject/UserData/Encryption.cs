@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamProject.User
+namespace TeamProject.UserData
 {
     public class Encryption
     {

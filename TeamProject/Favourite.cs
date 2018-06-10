@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace TeamProject
 {
-    public class Hieroglyph
+    public class Favourite
     {
         public int Id { get; set; }
-        public string ChineseWord { get; set; }
-        public string Pinyin { get; set; }
-        public string Translation { get; set; }
-    } 
+        public string UserMail { get; set; }
+        public string Hieroglyph { get; set; }
+    }
 }

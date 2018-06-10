@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamProject.User
+namespace TeamProject.UserData
 {
-    class User
+    public class User
     {
         public int Id { get; set; }
         public string FullName { get; set; }
