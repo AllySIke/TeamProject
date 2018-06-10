@@ -10,7 +10,7 @@ namespace TeamProject
     {
         static void Main(string[] args)
         {
-            
+            //проверка связи
         }
     }
 }
