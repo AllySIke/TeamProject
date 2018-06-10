@@ -14,6 +14,15 @@ namespace TeamProject.Migrations
 
         protected override void Seed(TeamProject.Context context)
         {
+            context.Hieroglyphs.AddOrUpdate(
+                new Hieroglyph()
+                {
+                    ChineseWord = "Œ“",
+                    Pinyin = "w®Ø",
+                    Translation = "me"
+                });
+
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
