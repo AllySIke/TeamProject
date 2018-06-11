@@ -17,8 +17,9 @@ namespace TeamProject.Migrations
             context.Hieroglyphs.AddOrUpdate(
                 new Hieroglyph()
                 {
+                    
                     ChineseWord = "我",
-                    Pinyin = "wǒ",
+                    Pinyin = "wЁЇ",
                     Translation = "me"
                 });
 
