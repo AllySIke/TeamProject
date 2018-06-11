@@ -24,5 +24,11 @@ namespace MainWindow
         {
             InitializeComponent();
         }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            var register = new Registration();
+            this.Close();
+        }
     }
 }
