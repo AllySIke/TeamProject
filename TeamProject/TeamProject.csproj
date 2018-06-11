@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201806101344201_First.Designer.cs">
       <DependentUpon>201806101344201_First.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806112205269_BetterIGuess.cs" />
+    <Compile Include="Migrations\201806112205269_BetterIGuess.Designer.cs">
+      <DependentUpon>201806112205269_BetterIGuess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806101344201_First.resx">
       <DependentUpon>201806101344201_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806112205269_BetterIGuess.resx">
+      <DependentUpon>201806112205269_BetterIGuess.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

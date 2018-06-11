@@ -30,27 +30,37 @@ namespace MainWindow
 
         private void Piniyn_Click(object sender, RoutedEventArgs e)
         {
-
+            var task = new Task(1, user);
+            task.Show();
+            this.Close();
         }
 
         private void Hieroglyph_Click(object sender, RoutedEventArgs e)
         {
-
+            var task = new Task(2, user);
+            task.Show();
+            this.Close();
         }
 
         private void Translation_Click(object sender, RoutedEventArgs e)
         {
-
+            var task = new Task(3, user);
+            task.Show();
+            this.Close();
         }
 
         private void Dictionary_Click(object sender, RoutedEventArgs e)
         {
-
+            var dict = new Dictionary(user);
+            dict.Show();
+            this.Close();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            var logIn = new LogIn();
+            logIn.Show();
+            this.Close();
         }
     }
 }

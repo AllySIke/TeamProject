@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamProject.UserData;
 
 namespace MainWindow
 {
@@ -19,7 +20,7 @@ namespace MainWindow
     /// </summary>
     public partial class Dictionary : Window
     {
-        public Dictionary()
+        public Dictionary(User user)
         {
             InitializeComponent();
         }
