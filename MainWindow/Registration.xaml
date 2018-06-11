@@ -20,7 +20,7 @@
             <TextBlock>Enter your password</TextBlock>
             <PasswordBox x:Name="password" Margin="5,0,0,120" Width="150" MaxWidth="200"></PasswordBox>
         </StackPanel>
-        <Button Width ="40" Height="30" Margin ="0,100,0,0" >Enter</Button>
-        <Button Width ="40" Height="30" Margin ="200,200,0,0" >Back</Button>
+        <Button Width ="40" Height="30" Margin ="0,100,0,0" Click="Registration_Click">Enter</Button>
+        <Button Width ="40" Height="30" Margin ="200,200,0,0" Click="Back_Click">Back</Button>
     </Grid>
 </Window>

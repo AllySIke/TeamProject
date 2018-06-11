@@ -23,5 +23,30 @@ namespace MainWindow
         {
             InitializeComponent();
         }
+
+        private void VarOne_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VarTwo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VarThree_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VarFour_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

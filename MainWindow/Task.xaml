@@ -13,11 +13,11 @@
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,40,0,300" >Choose the correct answer out of four.</TextBlock>
         <TextBlock Name="Question" HorizontalAlignment="Center" FontSize="20" Margin="0,90,0,300" ></TextBlock>
-        <Button  Width="130" Height="70" Margin="0,50,160,80" Click="Hieroglyph_Click" Name="VarOne"/>
-        <Button  Width="130" Height="70" Margin="160,50,0,80" Click="Pinyin_Click" Name="VarTwo" ></Button>
-        <Button  Width="130" Height="70" Margin="0,180,160,0" Click="Translation_Click" Name="VarThree" ></Button>
-        <Button  Width="130" Height="70" Margin="160,180,0,0" Click="Dictionary_Click" Name="VarFour" ></Button>
-        <Button  Width="50" Height="30" Margin="240,340,0,0" Click="Exit_Click" Content="Exit" Name="Exit"></Button>
+        <Button  Width="130" Height="70" Margin="0,50,160,80" Click="VarOne_Click" Name="VarOne"/>
+        <Button  Width="130" Height="70" Margin="160,50,0,80" Click="VarTwo_Click" Name="VarTwo" ></Button>
+        <Button  Width="130" Height="70" Margin="0,180,160,0" Click="VarThree_Click" Name="VarThree" ></Button>
+        <Button  Width="130" Height="70" Margin="160,180,0,0" Click="VarFour_Click" Name="VarFour" ></Button>
+        <Button  Width="50" Height="30" Margin="240,340,0,0" Click="Exit_Click"  Content="Exit" Name="Exit"></Button>
     </Grid>
 </Window>
 

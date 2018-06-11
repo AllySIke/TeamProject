@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamProject.UserData;
 
 namespace MainWindow
 {
@@ -19,9 +20,37 @@ namespace MainWindow
     /// </summary>
     public partial class TaskChoosing : Window
     {
-        public TaskChoosing()
+        User user;
+
+        public TaskChoosing(User _user)
         {
             InitializeComponent();
+            user = _user;
+        }
+
+        private void Piniyn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Hieroglyph_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Translation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Dictionary_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
