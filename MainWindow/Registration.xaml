@@ -11,15 +11,15 @@
         <Image HorizontalAlignment="Center" Height="140" Margin="0,160,70,0" VerticalAlignment="Top" Width="250" Source="http://www.chinadragonchicago.com/wp-content/uploads/2016/06/orangeDragon.png"/>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment ="Center" Margin="-15,100,0,0">
             <TextBlock>Enter your name</TextBlock>
-            <TextBox x:Name="name" Margin="5,0,0,180" Width="150" MaxWidth="200" ></TextBox>
+            <TextBox x:Name="name" Margin="5,0,0,10" Width="150" MaxHeight="200" ></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment ="Center" Margin="-15,130,0,0">
             <TextBlock>Enter your email</TextBlock>
-            <TextBox x:Name="email" Margin="5,0,0,150" Width="150" MaxWidth="200" ></TextBox>
+            <TextBox x:Name="email" Margin="5,0,0,10" Width="150" MaxHeight="200"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment ="Center" Margin="-36,160,0,0">
             <TextBlock>Enter your password</TextBlock>
-            <PasswordBox x:Name="password" Margin="5,0,0,120" Width="150" MaxWidth="200" ></PasswordBox>
+            <PasswordBox x:Name="password" Margin="5,0,0,10" Width="150" MaxHeight="200"></PasswordBox>
         </StackPanel>
         <Button Background="PapayaWhip" Width ="40" Height="30" Margin ="200,150,0,0" Click="Registration_Click">Enter</Button>
         <Button Background="PapayaWhip" Width ="40" Height="30" Margin ="200,230,0,0" Click="Back_Click">Back</Button>
