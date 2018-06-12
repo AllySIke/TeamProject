@@ -34,8 +34,10 @@ namespace MainWindow
                               || u.TaskThreeRight == false))
                                select h).ToList();
             }
+            //????????????????UnknownWords.ItemsSource = null;
             //1!!!!!!!111!!!!!1111!
-            UnknownWords.ItemsSource = hieroglyphs;
+            //if(!UnknownWords.HasItems)
+            //????????????????????UnknownWords.ItemsSource = hieroglyphs;
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
