@@ -11,7 +11,8 @@
             <ColumnDefinition Width="51*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="200" Margin="370,130,0,0" VerticalAlignment="Top" Width="145" Source="http://www.husain-off.ru/hg7n/images1/drm5-184.png"/>
+        <Image HorizontalAlignment="Center" Height="200" Margin="-150,10,0,0" VerticalAlignment="Top" Width="500" Source="https://png.kisspng.com/20180301/zre/kisspng-mooncake-mid-autumn-festival-change-traditional-ch-painted-peach-branches-5a98b4b9898891.7076305015199571775634.png"/>
+        <Image x:Name="image" HorizontalAlignment="Center" Height="200" Margin="370,130,0,0" VerticalAlignment="Top" Width="145" Source="http://www.husain-off.ru/hg7n/images1/drm5-184.png"/>
         <StackPanel Grid.ColumnSpan="2" Margin="0,0,0,0.5">
             <TextBlock HorizontalAlignment="Center" Margin="0,65,0,0">Enter your email and password</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">

@@ -9,7 +9,7 @@
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Center" Height="100" Margin="130,100,0,0" VerticalAlignment="Top" Width="250" Source="https://avatanplus.com/files/resources/mid/58d0c20f6427c15aef760c32.png"/>
         <TextBlock HorizontalAlignment="Center" TextAlignment ="Center" TextWrapping="Wrap" Text = "Congratulations! Your result is Ы. Would you like to open the dictionary?" FontSize="20" Margin="0,40,0,100" ></TextBlock>
-        <Button Background="PapayaWhip" Width="130" Height="70" Margin="0,120,240,0" Click="Dictionary_Click" Content="Open my dictionary"></Button>
-        <Button  Width="50" Height="30" Margin="300,180,0,0" Click="Exit_Click"  Content="Exit"></Button>
+        <Button Background="PapayaWhip" Width="130" Height="70" Margin="0,120,240,0" Content="Open my dictionary"></Button>
+        <Button  Width="50" Height="30" Margin="300,180,0,0" Content="Exit"></Button>
     </Grid>
 </Window>
