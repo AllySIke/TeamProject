@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,38 +43,72 @@ namespace MainWindow
             {
                 hieroglyph = null;
                 hieroglyphs = new List<Hieroglyph>();
-                foreach (var hierogl in context.Favourites.Where(h => h.TaskOneRight == false
-                && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
+                try
                 {
-                    hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));//!!!!!!!!!!!!!!!!!!1111!!!!!
+                    if (task == 1)
+                    {
+                        foreach (var hierogl in context.Favourites.Where(h => h.TaskOneRight == false
+                    && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
+                        {
+                            hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));
+                        }
+                    }
+                    if (task == 2)
+                    {
+                        foreach (var hierogl in context.Favourites.Where(h => h.TaskTwoRight == false
+                    && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
+                        {
+                            hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));
+                        }
+                    }
+                    if (task == 3)
+                    {
+                        foreach (var hierogl in context.Favourites.Where(h => h.TaskThreeRight == false
+                    && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
+                        {
+                            hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));
+                        }
+                    }
+                    if (hieroglyphs.Count < 4)
+                    {
+                        foreach (var hierogl in context.Favourites.Where(h => h.UserMail == user.Email).
+                            OrderBy(X => Guid.NewGuid()).Take(4 - hieroglyphs.Count).ToList())
+                        {
+                            hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));
+                        }
+                    }
+                    foreach (var h in hieroglyphs.OrderBy(X => Guid.NewGuid()).Take(1))
+                    {
+                        hieroglyph = h;
+                    }
+                    if (task == 2)
+                    {
+                        VarOne.Content = hieroglyphs[0].ChineseWord;
+                        VarTwo.Content = hieroglyphs[1].ChineseWord;
+                        VarThree.Content = hieroglyphs[2].ChineseWord;
+                        VarFour.Content = hieroglyphs[3].ChineseWord;
+                        Question.Text = hieroglyph.Translation;
+                    }
+                    if (task == 1)
+                    {
+                        VarOne.Content = hieroglyphs[0].Pinyin;
+                        VarTwo.Content = hieroglyphs[1].Pinyin;
+                        VarThree.Content = hieroglyphs[2].Pinyin;
+                        VarFour.Content = hieroglyphs[3].Pinyin;
+                        Question.Text = hieroglyph.ChineseWord;
+                    }
+                    if (task == 3)
+                    {
+                        VarOne.Content = hieroglyphs[0].Translation;
+                        VarTwo.Content = hieroglyphs[1].Translation;
+                        VarThree.Content = hieroglyphs[2].Translation;
+                        VarFour.Content = hieroglyphs[3].Translation;
+                        Question.Text = hieroglyph.ChineseWord;
+                    };
                 }
-                foreach (var h in hieroglyphs.OrderBy(X => Guid.NewGuid()).Take(1))
+                catch(Exception)
                 {
-                    hieroglyph = h;
-                }
-                if (task == 2)
-                {
-                    VarOne.Content = hieroglyphs[0].ChineseWord;
-                    VarTwo.Content = hieroglyphs[1].ChineseWord;
-                    VarThree.Content = hieroglyphs[2].ChineseWord;
-                    VarFour.Content = hieroglyphs[3].ChineseWord;
-                    Question.Text = hieroglyph.Translation;
-                }
-                if (task == 1)
-                {
-                    VarOne.Content = hieroglyphs[0].Pinyin;
-                    VarTwo.Content = hieroglyphs[1].Pinyin;
-                    VarThree.Content = hieroglyphs[2].Pinyin;
-                    VarFour.Content = hieroglyphs[3].Pinyin;
-                    Question.Text = hieroglyph.ChineseWord;
-                }
-                if (task == 3)
-                {
-                    VarOne.Content = hieroglyphs[0].Translation;
-                    VarTwo.Content = hieroglyphs[1].Translation;
-                    VarThree.Content = hieroglyphs[2].Translation;
-                    VarFour.Content = hieroglyphs[3].Translation;
-                    Question.Text = hieroglyph.ChineseWord;
+                    MessageBox.Show("You have already completed all such tasks with the hieroglyphs for the HSK I!");
                 }
             }
         }
@@ -86,7 +121,7 @@ namespace MainWindow
                 var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
                 context.Favourites.Remove(h);
                 h.TaskOneRight = true;
-                context.Favourites.Add(h);
+                context.Favourites.AddOrUpdate(h);
                 context.SaveChanges();
             }
         }
@@ -109,7 +144,9 @@ namespace MainWindow
             }
             else
             {
-                //ноыое окно????????????????
+                var congratulation = new Congratulation(howManyRightAnsweres, user);
+                congratulation.Show();
+                this.Close();
             }
         }
 
@@ -131,7 +168,9 @@ namespace MainWindow
             }
             else
             {
-                //ноыое окно????????????????
+                var congratulation = new Congratulation(howManyRightAnsweres, user);
+                congratulation.Show();
+                this.Close();
             }
         }
 
@@ -153,7 +192,9 @@ namespace MainWindow
             }
             else
             {
-                //ноыое окно????????????????
+                var congratulation = new Congratulation(howManyRightAnsweres, user);
+                congratulation.Show();
+                this.Close();
             }
         }
 
@@ -175,7 +216,9 @@ namespace MainWindow
             }
             else
             {
-                //ноыое окно????????????????
+                var congratulation = new Congratulation(howManyRightAnsweres, user);
+                congratulation.Show();
+                this.Close();
             }
         }
 

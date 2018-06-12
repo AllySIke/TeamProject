@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamProject.UserData;
 
 namespace MainWindow
 {
@@ -19,9 +20,26 @@ namespace MainWindow
     /// </summary>
     public partial class Congratulation : Window
     {
-        public Congratulation()
+        User user;
+        public Congratulation(int result, User _user)
         {
+            user = _user;
             InitializeComponent();
+            Result.Text = $"Congratulations! Your result is {result}/20. Would you like to open the dictionary?";
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            var chooseTask = new TaskChoosing(user);
+            chooseTask.Show();
+            this.Close();
+        }
+
+        private void Dictionary_Click(object sender, RoutedEventArgs e)
+        {
+            var dictionary = new Dictionary(user);
+            dictionary.Show();
+            this.Close();
         }
     }
 }

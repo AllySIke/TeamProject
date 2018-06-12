@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="DICTIONARY" Height="300" Width="300">
     <Grid>
-        <ListBox Grid.Column="3" x:Name="UnknownWords" VerticalAlignment="Top" DisplayMemberPath="Name">
+        <ListBox Grid.Column="3" x:Name="UnknownWords" VerticalAlignment="Top">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Grid>
@@ -19,9 +19,9 @@
                     </Grid>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
-            <ListBoxItem Name="Hieroglyph" Grid.Column="0">Hieroglyph</ListBoxItem>
-            <ListBoxItem Name="Pinyin" Grid.Column="1">Piniyn</ListBoxItem>
-            <ListBoxItem Name="Translation" Grid.Column="2">Translation</ListBoxItem>
+            <ListBoxItem Name="Hieroglyph" Grid.Column="0" BindingGroup="{Binding Path = Hieroglyph}">Hieroglyph</ListBoxItem>
+            <ListBoxItem Name="Pinyin" Grid.Column="1" BindingGroup="{Binding Path = Pinyin}">Piniyn</ListBoxItem>
+            <ListBoxItem Name="Translation" Grid.Column="2" BindingGroup="{Binding Path = Translation}">Translation</ListBoxItem>
         </ListBox>
         <Button  Width="30" Height="20" Margin="250,240,0,0" Click="Exit_Click"  Content="Exit"></Button>
     </Grid>

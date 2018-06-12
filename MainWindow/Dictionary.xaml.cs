@@ -32,11 +32,10 @@ namespace MainWindow
                 hieroglyphs = (from h in context.Favourites.Where(u => u.UserMail == user.Email
                               && (u.TaskOneRight == false || u.TaskTwoRight == false
                               || u.TaskThreeRight == false))
-                              select h).ToList();
+                               select h).ToList();
             }
+            //1!!!!!!!111!!!!!1111!
             UnknownWords.ItemsSource = hieroglyphs;
-            
-            //binding group?????????
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
