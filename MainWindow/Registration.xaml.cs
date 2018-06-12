@@ -49,13 +49,27 @@ namespace MainWindow
                                 var encrypt = new Encryption();
                                 if (!context.Users.Any(u => u.Email == email.Text))
                                 {
-                                    context.Users.AddOrUpdate(new User
+                                    User user = new User
                                     {
                                         FullName = name.Text,
                                         Email = email.Text,
                                         Password = encrypt.GetHash(password.Password)
-                                    });
+                                    };
+                                    context.Users.AddOrUpdate(user);
+                                    
+                                    foreach(var hierogl in context.Hieroglyphs)
+                                    {
+                                        context.Favourites.AddOrUpdate(new Favourite
+                                        {
+                                            Hieroglyph = hierogl,
+                                            TaskOneRight = false,
+                                            TaskTwoRight = false,
+                                            TaskThreeRight = false,
+                                            UserMail = user
+                                        });
+                                    };
                                     context.SaveChanges();
+
                                     var logIn = new LogIn();
                                     logIn.Show();
                                     this.Close();

@@ -67,6 +67,14 @@
     <Compile Include="Migrations\201806112205269_BetterIGuess.Designer.cs">
       <DependentUpon>201806112205269_BetterIGuess.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806120715296_InProcess.cs" />
+    <Compile Include="Migrations\201806120715296_InProcess.Designer.cs">
+      <DependentUpon>201806120715296_InProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806120749091_gg.cs" />
+    <Compile Include="Migrations\201806120749091_gg.Designer.cs">
+      <DependentUpon>201806120749091_gg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806112205269_BetterIGuess.resx">
       <DependentUpon>201806112205269_BetterIGuess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806120715296_InProcess.resx">
+      <DependentUpon>201806120715296_InProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806120749091_gg.resx">
+      <DependentUpon>201806120749091_gg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
