@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Register" Height="330" Width="300">
     <Grid>
-        <TextBlock HorizontalAlignment ="Left" Margin="7,5,3,0" TextAlignment="Center" TextWrapping="Wrap" >Welcome to HSK Ready! Our platform is dedicated to preparing for the HSK(汉语水平考试 Hànyǔ Shuǐpíng Kǎoshì) - the most important exam for those, who want to study chinese. Enter you personal data and get started! </TextBlock>
+        <TextBlock HorizontalAlignment ="Left" Margin="7,10,3,0" TextAlignment="Center" TextWrapping="Wrap" >Welcome to HSK Ready! Our platform is dedicated to preparing for the HSK(汉语水平考试 Hànyǔ Shuǐpíng Kǎoshì) - the most important exam for those, who want to study chinese. Enter you personal data and get started! </TextBlock>
         <Image x:Name="image" HorizontalAlignment="Center" Height="140" Margin="0,160,70,0" VerticalAlignment="Top" Width="250" Source="http://www.chinadragonchicago.com/wp-content/uploads/2016/06/orangeDragon.png"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="20,100,0,0">
             <TextBlock>Enter your name</TextBlock>
