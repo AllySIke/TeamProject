@@ -11,7 +11,7 @@
             <ColumnDefinition Width="51*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0,40,0,300" >Choose the correct answer out of four.</TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="20" Margin="0,40,0,300" >Choose the correct answer out of four.</TextBlock>
         <TextBlock Name="Question" HorizontalAlignment="Center" FontSize="20" Margin="0,90,0,300" ></TextBlock>
         <Button  Width="130" Height="70" Margin="0,50,160,80" Click="VarOne_Click" Name="VarOne"/>
         <Button  Width="130" Height="70" Margin="160,50,0,80" Click="VarTwo_Click" Name="VarTwo" ></Button>

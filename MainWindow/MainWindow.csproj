@@ -68,6 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Congratulation.xaml.cs">
+      <DependentUpon>Congratulation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dictionary.xaml.cs">
       <DependentUpon>Dictionary.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
     <Compile Include="TaskChoosing.xaml.cs">
       <DependentUpon>TaskChoosing.xaml</DependentUpon>
     </Compile>
+    <Page Include="Congratulation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

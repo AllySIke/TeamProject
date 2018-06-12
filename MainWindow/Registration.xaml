@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainWindow"
         mc:Ignorable="d"
-        Title="Register" Height="300" Width="300">
+        Title="Register" Height="330" Width="300">
     <Grid>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="20,70,0,0">
+        <TextBlock HorizontalAlignment ="Left" Margin="7,5,3,0" TextAlignment="Center" TextWrapping="Wrap" >Welcome to HSK Ready! Our platform is dedicated to preparing for the HSK(汉语水平考试 Hànyǔ Shuǐpíng Kǎoshì) - the most important exam for those, who want to study chinese. Enter you personal data and get started! </TextBlock>
+        <Image x:Name="image" HorizontalAlignment="Center" Height="140" Margin="0,160,70,0" VerticalAlignment="Top" Width="250" Source="http://www.chinadragonchicago.com/wp-content/uploads/2016/06/orangeDragon.png"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="20,100,0,0">
             <TextBlock>Enter your name</TextBlock>
             <TextBox x:Name="name" Margin="5,0,0,180" Width="150" MaxWidth="200"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="20,100,0,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="20,130,0,0">
             <TextBlock>Enter your email</TextBlock>
             <TextBox x:Name="email" Margin="5,0,0,150" Width="150" MaxWidth="200"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="00,130,0,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment ="Left" Margin="00,160,0,0">
             <TextBlock>Enter your password</TextBlock>
             <PasswordBox x:Name="password" Margin="5,0,0,120" Width="150" MaxWidth="200"></PasswordBox>
         </StackPanel>
-        <Button Width ="40" Height="30" Margin ="0,100,0,0" Click="Registration_Click">Enter</Button>
-        <Button Width ="40" Height="30" Margin ="200,200,0,0" Click="Back_Click">Back</Button>
+        <Button Background="PapayaWhip" Width ="40" Height="30" Margin ="200,150,0,0" Click="Registration_Click">Enter</Button>
+        <Button Background="PapayaWhip" Width ="40" Height="30" Margin ="200,230,0,0" Click="Back_Click">Back</Button>
     </Grid>
 </Window>
