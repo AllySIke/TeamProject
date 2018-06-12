@@ -29,7 +29,7 @@ namespace MainWindow
             List<Favourite> hieroglyphs;
             using (var context = new Context())
             {
-                hieroglyphs = (from h in context.Favourites.Where(u => u.UserMail == user
+                hieroglyphs = (from h in context.Favourites.Where(u => u.UserMail == user.Email
                               && (u.TaskOneRight == false || u.TaskTwoRight == false
                               || u.TaskThreeRight == false))
                               select h).ToList();
