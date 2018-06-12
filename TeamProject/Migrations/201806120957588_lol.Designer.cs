@@ -7,13 +7,13 @@ namespace TeamProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class BetterIGuess : IMigrationMetadata
+    public sealed partial class lol : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(BetterIGuess));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(lol));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806112205269_BetterIGuess"; }
+            get { return "201806120957588_lol"; }
         }
         
         string IMigrationMetadata.Source

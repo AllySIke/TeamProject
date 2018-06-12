@@ -14,7 +14,7 @@ namespace TeamProject
         public DbSet<Favourite> Favourites { get; set; }
         public DbSet<Hieroglyph> Hieroglyphs { get; set; }
 
-        public Context() : base("localbase")
+        public Context() : base("teamproj")
         {
 
         }

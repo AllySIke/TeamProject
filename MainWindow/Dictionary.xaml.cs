@@ -35,6 +35,7 @@ namespace MainWindow
                               select h).ToList();
             }
             UnknownWords.ItemsSource = hieroglyphs;
+            
             //binding group?????????
         }
 
