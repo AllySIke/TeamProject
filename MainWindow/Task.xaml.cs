@@ -53,9 +53,9 @@ namespace MainWindow
             {
                 hieroglyphs = null;
                 foreach (var hierogl in context.Favourites.Where(h => h.TaskOneRight == false
-                && h.UserMail == user).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
+                && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
                 {
-                    hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph.ChineseWord));
+                    hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));//!!!!!!!!!!!!!!!!!!1111!!!!!
                 }
                 VarOne.Content = hieroglyphs[0].ChineseWord;
                 VarTwo.Content = hieroglyphs[1].ChineseWord;
@@ -74,7 +74,7 @@ namespace MainWindow
                 howManyRightAnsweres += 1;
                 using (var context = new Context())
                 {
-                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user && f.Hieroglyph == hieroglyph);
+                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
                     context.Favourites.Remove(h);
                     h.TaskOneRight = true;
                     context.Favourites.Add(h);
@@ -115,7 +115,7 @@ namespace MainWindow
                 howManyRightAnsweres += 1;
                 using (var context = new Context())
                 {
-                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user && f.Hieroglyph == hieroglyph);
+                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
                     context.Favourites.Remove(h);
                     h.TaskTwoRight = true;
                     context.Favourites.Add(h);

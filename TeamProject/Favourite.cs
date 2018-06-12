@@ -10,14 +10,10 @@ namespace TeamProject
     public class Favourite
     {
         public int Id { get; set; }
-        public User UserMail { get; set; }
-        public Hieroglyph Hieroglyph { get; set; }
+        public string UserMail { get; set; }
+        public string Hieroglyph { get; set; }
         public bool TaskOneRight { get; set; }
         public bool TaskTwoRight { get; set; }
         public bool TaskThreeRight { get; set; }
-
-        //public virtual User UserMail { get; set; }
-        //public virtual Hieroglyph Hieroglyph { get; set; }
-        //тут нужно какое-то паблик виртуал и ссылку на юзера гг Бабнича поспрашиваю
     }
 }

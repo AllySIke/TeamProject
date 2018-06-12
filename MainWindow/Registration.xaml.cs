@@ -34,13 +34,40 @@ namespace MainWindow
             this.Close();
         }
 
+        private bool EMailCheck(string mailOrNot)
+        {
+            var a = mailOrNot.ToCharArray();
+            var word = new List<char>();
+            int amountOf = 0;
+            int amountOfDots = 0;
+            foreach (var letter in a)
+            {
+                word.Add(letter);
+
+                if (letter.Equals('@'))
+                    amountOf += 1;
+
+                if (letter.Equals('.'))
+                    amountOfDots += 1;
+            }
+
+            if (amountOfDots == 1 && amountOf == 1 && a.ElementAt(0) != '@' && a.ElementAt(0) != '.'
+                && a.ElementAt(a.Count() - 1) != '@' && a.ElementAt(a.Count() - 1) != '.'
+                && word.IndexOf('@') <= word.IndexOf('.') + 1)
+                return true;
+            else
+            {
+                return false;
+            }
+        }
+
         private void Registration_Click(object sender, RoutedEventArgs e)
         {
             if (name.Text != null)
             {
                 if (email.Text != null)
                 {
-                    if (true)//проверка на имейл!!!!!!1!!!!1!11!!
+                    if (EMailCheck(email.Text))
                     {
                         if (password.Password != null)
                         {
@@ -61,11 +88,11 @@ namespace MainWindow
                                     {
                                         context.Favourites.AddOrUpdate (new Favourite
                                         {
-                                            Hieroglyph = hierogl,
+                                            Hieroglyph = hierogl.ChineseWord,
                                             TaskOneRight = false,
                                             TaskTwoRight = false,
                                             TaskThreeRight = false,
-                                            UserMail = user
+                                            UserMail = user.Email
                                         });
                                     };
                                     context.SaveChanges();
@@ -87,7 +114,7 @@ namespace MainWindow
                     }
                     else
                     {
-                        MessageBox.Show("Invalid Emmail");
+                        MessageBox.Show("Invalid Email");
                     }
                 }
                 else
