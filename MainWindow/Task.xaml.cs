@@ -108,7 +108,43 @@ namespace MainWindow
 
         private void VarTwo_Click(object sender, RoutedEventArgs e)
         {
-        
+            amountOfQuestionsPassed += 1;
+            if (hieroglyph.ChineseWord == VarTwo.Content.ToString() || hieroglyph.Pinyin == VarTwo.Content.ToString()
+                || hieroglyph.Translation == VarTwo.Content.ToString())
+            {
+                howManyRightAnsweres += 1;
+                using (var context = new Context())
+                {
+                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user && f.Hieroglyph == hieroglyph);
+                    context.Favourites.Remove(h);
+                    h.TaskTwoRight = true;
+                    context.Favourites.Add(h);
+                    context.SaveChanges();
+                }
+            }
+            else
+            {
+                //показать что ответ неверный???????????
+            }
+            if (amountOfQuestionsPassed < 20)
+            {
+                if (task == 1)
+                {
+                    Method(1, out hieroglyphs, out hieroglyph);
+                }
+                if (task == 2)
+                {
+                    Method(2, out hieroglyphs, out hieroglyph);
+                }
+                if (task == 3)
+                {
+                    Method(3, out hieroglyphs, out hieroglyph);
+                }
+            }
+            else
+            {
+                //ноыое окно????????????????
+            }
         }
 
         private void VarThree_Click(object sender, RoutedEventArgs e)

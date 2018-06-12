@@ -59,7 +59,7 @@ namespace MainWindow
                                     
                                     foreach(var hierogl in context.Hieroglyphs)
                                     {
-                                        context.Favourites.AddOrUpdate(new Favourite
+                                        context.Favourites.AddOrUpdate (new Favourite
                                         {
                                             Hieroglyph = hierogl,
                                             TaskOneRight = false,

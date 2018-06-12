@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamProject;
 using TeamProject.UserData;
 
 namespace MainWindow
@@ -23,6 +24,16 @@ namespace MainWindow
         public Dictionary(User user)
         {
             InitializeComponent();
+            List<Favourite> hieroglyphs;
+            using (var context = new Context())
+            {
+                hieroglyphs = (from h in context.Favourites.Where(u => u.UserMail == user
+                              && (u.TaskOneRight == false || u.TaskTwoRight == false
+                              || u.TaskThreeRight == false))
+                              select h).ToList();
+            }
+            UnknownWords.ItemsSource = hieroglyphs;
+            //binding group?????????
         }
     }
 }

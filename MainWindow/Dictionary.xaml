@@ -20,7 +20,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBoxItem Name="Hieroglyph" Grid.Column="0">Hieroglyph</ListBoxItem>
-            <ListBoxItem Name="Pinyin"  Grid.Column="1">Piniyn</ListBoxItem>
+            <ListBoxItem Name="Pinyin" Grid.Column="1">Piniyn</ListBoxItem>
             <ListBoxItem Name="Translation" Grid.Column="2">Translation</ListBoxItem>
         </ListBox>
     </Grid>
