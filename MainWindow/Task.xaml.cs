@@ -33,53 +33,71 @@ namespace MainWindow
             InitializeComponent();
             user = _user;
             task = _task;
-            if (task == 1)
-            {
-                Method(1, out hieroglyphs, out hieroglyph);
-            }
-            if (task == 2)
-            {
-                Method(2, out hieroglyphs, out hieroglyph);
-            }
-            if (task == 3)
-            {
-                Method(3,out hieroglyphs, out hieroglyph);
-            }
+            Method(out hieroglyphs, out hieroglyph);
         }
 
-        private void Method(int task, out List<Hieroglyph>hieroglyphs, out Hieroglyph hieroglyph)
+        private void Method(out List<Hieroglyph>hieroglyphs, out Hieroglyph hieroglyph)
         {
             using (var context = new Context())
             {
-                hieroglyphs = null;
+                hieroglyph = null;
+                hieroglyphs = new List<Hieroglyph>();
                 foreach (var hierogl in context.Favourites.Where(h => h.TaskOneRight == false
                 && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
                 {
                     hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == hierogl.Hieroglyph));//!!!!!!!!!!!!!!!!!!1111!!!!!
                 }
-                VarOne.Content = hieroglyphs[0].ChineseWord;
-                VarTwo.Content = hieroglyphs[1].ChineseWord;
-                VarThree.Content = hieroglyphs[2].ChineseWord;
-                VarFour.Content = hieroglyphs[3].ChineseWord;
-                hieroglyph = hieroglyphs.OrderBy(X => Guid.NewGuid()).Take(1) as Hieroglyph;
-                Question.Text = hieroglyph.Translation;
+                foreach (var h in hieroglyphs.OrderBy(X => Guid.NewGuid()).Take(1))
+                {
+                    hieroglyph = h;
+                }
+                if (task == 2)
+                {
+                    VarOne.Content = hieroglyphs[0].ChineseWord;
+                    VarTwo.Content = hieroglyphs[1].ChineseWord;
+                    VarThree.Content = hieroglyphs[2].ChineseWord;
+                    VarFour.Content = hieroglyphs[3].ChineseWord;
+                    Question.Text = hieroglyph.Translation;
+                }
+                if (task == 1)
+                {
+                    VarOne.Content = hieroglyphs[0].Pinyin;
+                    VarTwo.Content = hieroglyphs[1].Pinyin;
+                    VarThree.Content = hieroglyphs[2].Pinyin;
+                    VarFour.Content = hieroglyphs[3].Pinyin;
+                    Question.Text = hieroglyph.ChineseWord;
+                }
+                if (task == 3)
+                {
+                    VarOne.Content = hieroglyphs[0].Translation;
+                    VarTwo.Content = hieroglyphs[1].Translation;
+                    VarThree.Content = hieroglyphs[2].Translation;
+                    VarFour.Content = hieroglyphs[3].Translation;
+                    Question.Text = hieroglyph.ChineseWord;
+                }
             }
         }
+
+        private void RightAnswers()
+        {
+            howManyRightAnsweres += 1;
+            using (var context = new Context())
+            {
+                var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
+                context.Favourites.Remove(h);
+                h.TaskOneRight = true;
+                context.Favourites.Add(h);
+                context.SaveChanges();
+            }
+        }
+
         private void VarOne_Click(object sender, RoutedEventArgs e)
         {
             amountOfQuestionsPassed += 1;
             if (hieroglyph.ChineseWord == VarOne.Content.ToString() || hieroglyph.Pinyin == VarOne.Content.ToString()
                 || hieroglyph.Translation == VarOne.Content.ToString())
             {
-                howManyRightAnsweres += 1;
-                using (var context = new Context())
-                {
-                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
-                    context.Favourites.Remove(h);
-                    h.TaskOneRight = true;
-                    context.Favourites.Add(h);
-                    context.SaveChanges();
-                }
+                RightAnswers();
             }
             else
             {
@@ -87,18 +105,7 @@ namespace MainWindow
             }
             if (amountOfQuestionsPassed < 20)
             {
-                if (task == 1)
-                {
-                    Method(1, out hieroglyphs, out hieroglyph);
-                }
-                if (task == 2)
-                {
-                    Method(2, out hieroglyphs, out hieroglyph);
-                }
-                if (task == 3)
-                {
-                    Method(3, out hieroglyphs, out hieroglyph);
-                }
+                Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
@@ -112,15 +119,7 @@ namespace MainWindow
             if (hieroglyph.ChineseWord == VarTwo.Content.ToString() || hieroglyph.Pinyin == VarTwo.Content.ToString()
                 || hieroglyph.Translation == VarTwo.Content.ToString())
             {
-                howManyRightAnsweres += 1;
-                using (var context = new Context())
-                {
-                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
-                    context.Favourites.Remove(h);
-                    h.TaskTwoRight = true;
-                    context.Favourites.Add(h);
-                    context.SaveChanges();
-                }
+                RightAnswers();
             }
             else
             {
@@ -128,18 +127,7 @@ namespace MainWindow
             }
             if (amountOfQuestionsPassed < 20)
             {
-                if (task == 1)
-                {
-                    Method(1, out hieroglyphs, out hieroglyph);
-                }
-                if (task == 2)
-                {
-                    Method(2, out hieroglyphs, out hieroglyph);
-                }
-                if (task == 3)
-                {
-                    Method(3, out hieroglyphs, out hieroglyph);
-                }
+                Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
@@ -149,12 +137,46 @@ namespace MainWindow
 
         private void VarThree_Click(object sender, RoutedEventArgs e)
         {
-            
+            amountOfQuestionsPassed += 1;
+            if (hieroglyph.ChineseWord == VarThree.Content.ToString() || hieroglyph.Pinyin == VarThree.Content.ToString()
+                || hieroglyph.Translation == VarThree.Content.ToString())
+            {
+                RightAnswers();
+            }
+            else
+            {
+                //показать что ответ неверный???????????
+            }
+            if (amountOfQuestionsPassed < 20)
+            {
+                Method(out hieroglyphs, out hieroglyph);
+            }
+            else
+            {
+                //ноыое окно????????????????
+            }
         }
 
         private void VarFour_Click(object sender, RoutedEventArgs e)
         {
-            
+            amountOfQuestionsPassed += 1;
+            if (hieroglyph.ChineseWord == VarFour.Content.ToString() || hieroglyph.Pinyin == VarFour.Content.ToString()
+                || hieroglyph.Translation == VarFour.Content.ToString())
+            {
+                RightAnswers();
+            }
+            else
+            {
+                //показать что ответ неверный???????????
+            }
+            if (amountOfQuestionsPassed < 20)
+            {
+                Method(out hieroglyphs, out hieroglyph);
+            }
+            else
+            {
+                //ноыое окно????????????????
+            }
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
