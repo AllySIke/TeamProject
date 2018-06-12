@@ -21,9 +21,11 @@ namespace MainWindow
     /// </summary>
     public partial class Dictionary : Window
     {
-        public Dictionary(User user)
+        User user;
+        public Dictionary(User _user)
         {
             InitializeComponent();
+            user = _user;
             List<Favourite> hieroglyphs;
             using (var context = new Context())
             {
@@ -34,6 +36,13 @@ namespace MainWindow
             }
             UnknownWords.ItemsSource = hieroglyphs;
             //binding group?????????
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            var taskChoosing = new TaskChoosing(user);
+            taskChoosing.Show();
+            this.Close();
         }
     }
 }

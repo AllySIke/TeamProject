@@ -23,5 +23,6 @@
             <ListBoxItem Name="Pinyin" Grid.Column="1">Piniyn</ListBoxItem>
             <ListBoxItem Name="Translation" Grid.Column="2">Translation</ListBoxItem>
         </ListBox>
+        <Button  Width="30" Height="20" Margin="250,240,0,0" Click="Exit_Click"  Content="Exit"></Button>
     </Grid>
 </Window>

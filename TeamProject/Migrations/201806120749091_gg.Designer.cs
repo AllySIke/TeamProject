@@ -7,9 +7,9 @@ namespace TeamProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class gg : IMigrationMetadata
+    public sealed partial class Gg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(gg));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Gg));
         
         string IMigrationMetadata.Id
         {
