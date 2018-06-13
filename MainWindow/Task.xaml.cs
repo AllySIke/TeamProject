@@ -40,13 +40,15 @@ namespace MainWindow
 
         private void Method(out List<Hieroglyph>hieroglyphs, out Hieroglyph hieroglyph)
         {
-            System.Threading.Thread.Sleep(3000);
-            VarOne.Background = new SolidColorBrush(Colors.Lavender);
-            VarTwo.Background = new SolidColorBrush(Colors.Lavender);
-            VarThree.Background = new SolidColorBrush(Colors.Lavender);
-            VarFour.Background = new SolidColorBrush(Colors.Lavender);
             try
             {
+                //чего-то не хватает
+                System.Threading.Thread.Sleep(10000);
+                VarOne.Background = new SolidColorBrush(Colors.Bisque);
+                VarTwo.Background = new SolidColorBrush(Colors.Bisque);
+                VarThree.Background = new SolidColorBrush(Colors.Bisque);
+                VarFour.Background = new SolidColorBrush(Colors.Bisque);
+
                 using (var context = new Context())
                 {
                     hieroglyph = null;
@@ -203,6 +205,11 @@ namespace MainWindow
                 || hieroglyph.Translation == VarThree.Content.ToString())
             {
                 RightAnswers();
+                VarThree.Background = new SolidColorBrush(Colors.Green);
+            }
+            else
+            {
+                VarThree.Background = new SolidColorBrush(Colors.Red);
             }
             if (amountOfQuestionsPassed < 20)
             {
@@ -224,9 +231,14 @@ namespace MainWindow
             {
                 RightAnswers();
             }
+            else
+            {
+                VarFour.Background = new SolidColorBrush(Colors.Red);
+            }
             if (amountOfQuestionsPassed < 20)
             {
                 Method(out hieroglyphs, out hieroglyph);
+                VarFour.Background = new SolidColorBrush(Colors.Green);
             }
             else
             {
