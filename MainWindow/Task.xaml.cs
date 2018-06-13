@@ -42,9 +42,6 @@ namespace MainWindow
         {
             try
             {
-                //чего-то не хватает
-                //System.Threading.Thread.Sleep(10000);
-
                 using (var context = new Context())
                 {
                     hieroglyph = null;
@@ -151,21 +148,14 @@ namespace MainWindow
                 || hieroglyph.Translation == VarOne.Content.ToString())
             {
                 RightAnswers();
-                VarOne.Background = new SolidColorBrush(Colors.Green);
             }
-            else
-            {
-                VarOne.Background = new SolidColorBrush(Colors.Red);
-            }
+
             if (amountOfQuestionsPassed < 20)
             {
-                Task.Delay(10000);
-                VarOne.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
-                //Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
@@ -179,21 +169,15 @@ namespace MainWindow
                 || hieroglyph.Translation == VarTwo.Content.ToString())
             {
                 RightAnswers();
-                VarTwo.Background = new SolidColorBrush(Colors.Green);
             }
-            else
-            {
-                VarTwo.Background = new SolidColorBrush(Colors.Red);
-            }
+
             if (amountOfQuestionsPassed < 20)
             {
-                Task.Delay(10000);
-                VarTwo.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
+
             else
             {
-                Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
@@ -207,21 +191,14 @@ namespace MainWindow
                 || hieroglyph.Translation == VarThree.Content.ToString())
             {
                 RightAnswers();
-                VarThree.Background = new SolidColorBrush(Colors.Green);
             }
-            else
-            {
-                VarThree.Background = new SolidColorBrush(Colors.Red);
-            }
+
             if (amountOfQuestionsPassed < 20)
             {
-                Task.Delay(10000);
-                VarThree.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
-                Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
@@ -235,24 +212,14 @@ namespace MainWindow
                 || hieroglyph.Translation == VarFour.Content.ToString())
             {
                 RightAnswers();
-                VarFour.Background = null;
-                VarFour.Background = new SolidColorBrush(Colors.Green);
             }
-            else
-            {
-                VarFour.Background = null;
-                VarFour.Background = new SolidColorBrush(Colors.Red);
-            }
+
             if (amountOfQuestionsPassed < 20)
             {
-                Task.Delay(10000); ;
-                VarFour.Background = null;
-                VarFour.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
-                Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
