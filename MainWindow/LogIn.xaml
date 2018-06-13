@@ -23,8 +23,8 @@
                 <TextBlock Margin="0,0,5,0">Password</TextBlock>
                 <PasswordBox Width="150" MaxWidth="200" x:Name="passwordBox"></PasswordBox>
             </StackPanel>
-            <Button Width="100" Margin="0,50,0,0" Click="Enter_Click">Enter</Button>
-            <Button Width="100" Margin="0,10,0,0" Click="Register_Click">Register</Button>
+            <Button Background="IndianRed" Width="100" Margin="0,50,0,0" Click="Enter_Click">Enter</Button>
+            <Button Background="IndianRed" Width="100" Margin="0,10,0,0" Click="Register_Click">Register</Button>
         </StackPanel>
     </Grid>
 </Window>

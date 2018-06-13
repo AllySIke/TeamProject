@@ -23,6 +23,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button  Width="30" Height="20" Margin="250,240,0,0" Click="Exit_Click"  Content="Exit"></Button>
+        <Button Background="Bisque" Width="30" Height="20" Margin="250,240,0,0" Click="Exit_Click"  Content="Exit"></Button>
     </Grid>
 </Window>

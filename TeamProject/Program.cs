@@ -587,39 +587,345 @@ namespace TeamProject
                       },
                       new Hieroglyph
                       {
-                        ChineseWord = "先生",
-                        Pinyin = "xiānsheng",
-                        Translation = "sir"
+                        ChineseWord = "电影",
+                        Pinyin = "diànyǐng",
+                        Translation = "movie"
                       },
                       new Hieroglyph
                       {
-                        ChineseWord = "先生",
-                        Pinyin = "xiānsheng",
-                        Translation = "sir"
+                        ChineseWord = "天气",
+                        Pinyin = "tiānqì",
+                        Translation = "weather"
                       },
                       new Hieroglyph
                       {
-                        ChineseWord = "先生",
-                        Pinyin = "xiānsheng",
-                        Translation = "sir"
+                        ChineseWord = "猫",
+                        Pinyin = "māo",
+                        Translation = "cat"
                       },
                       new Hieroglyph
                       {
-                        ChineseWord = "先生",
-                        Pinyin = "xiānsheng",
-                        Translation = "sir"
+                        ChineseWord = "狗",
+                        Pinyin = "gǒu",
+                        Translation = "dog"
                       },
                       new Hieroglyph
                       {
-                        ChineseWord = "先生",
-                        Pinyin = "xiānsheng",
-                        Translation = "sir"
+                        ChineseWord = "东西",
+                        Pinyin = "dōngxi",
+                        Translation = "thing"
                       },
                       new Hieroglyph
                       {
-                        ChineseWord = "先生",
-                        Pinyin = "xiānsheng",
-                        Translation = "sir"
+                        ChineseWord = "人",
+                        Pinyin = "rén",
+                        Translation = "person"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "名字",
+                        Pinyin = "míngzi",
+                        Translation = "name"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "书",
+                        Pinyin = "shū",
+                        Translation = "book"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "汉语",
+                        Pinyin = "hànyǔ",
+                        Translation = "mandarin Chinese"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "字",
+                        Pinyin = "zì",
+                        Translation = "character"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "桌子",
+                        Pinyin = "zhuōzi",
+                        Translation = "desk"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "椅子",
+                        Pinyin = "yǐzi",
+                        Translation = "chair"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "谢谢",
+                        Pinyin = "xièxie",
+                        Translation = "thank"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "不客气",
+                        Pinyin = "búkèqì",
+                        Translation = "you are welcome"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "再见",
+                        Pinyin = "zàijiàn",
+                        Translation = "good-bye"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "请",
+                        Pinyin = "qǐng",
+                        Translation = "please"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "对不起",
+                        Pinyin = "duìbùqǐ",
+                        Translation = "sorry"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "没关系",
+                        Pinyin = "méiguānxì",
+                        Translation = "It doesn’t matter"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "是",
+                        Pinyin = "shì",
+                        Translation = "be (am, is, are)"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "有",
+                        Pinyin = "yǒu",
+                        Translation = "have"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "看",
+                        Pinyin = "kàn",
+                        Translation = "look"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "听",
+                        Pinyin = "tīng",
+                        Translation = "listen"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "说话",
+                        Pinyin = "shuōhuà",
+                        Translation = "speak"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "读",
+                        Pinyin = "dú",
+                        Translation = "read"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "写",
+                        Pinyin = "xiě",
+                        Translation = "write"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "看见",
+                        Pinyin = "kànjiàn",
+                        Translation = "see"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "叫",
+                        Pinyin = "jiào",
+                        Translation = "call"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "来",
+                        Pinyin = "lái",
+                        Translation = "come"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "回",
+                        Pinyin = "huí",
+                        Translation = "return"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "去",
+                        Pinyin = "qù",
+                        Translation = "go"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "吃",
+                        Pinyin = "chī",
+                        Translation = "eat"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "喝",
+                        Pinyin = "hē",
+                        Translation = "drink"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "睡觉",
+                        Pinyin = "shuìjiào",
+                        Translation = "sleep"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "打电话",
+                        Pinyin = "dǎdiànhuà",
+                        Translation = "call up"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "做",
+                        Pinyin = "zuò",
+                        Translation = "do"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "买",
+                        Pinyin = "mǎi",
+                        Translation = "buy"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "开",
+                        Pinyin = "kāi",
+                        Translation = "open"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "坐",
+                        Pinyin = "zuò",
+                        Translation = "sit"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "住",
+                        Pinyin = "zhù",
+                        Translation = "live"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "学习",
+                        Pinyin = "xuéxí",
+                        Translation = "study"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "工作",
+                        Pinyin = "gōngzuò",
+                        Translation = "work"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "下雨",
+                        Pinyin = "xiàyǔ",
+                        Translation = "rain"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "爱",
+                        Pinyin = "ài",
+                        Translation = "love"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "喜欢",
+                        Pinyin = "xǐhuān",
+                        Translation = "love, like"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "想",
+                        Pinyin = "xiǎng",
+                        Translation = "want"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "认识",
+                        Pinyin = "rènshi",
+                        Translation = "know"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "会",
+                        Pinyin = "huì",
+                        Translation = "can"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "能",
+                        Pinyin = "néng",
+                        Translation = "can, be able to"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "好",
+                        Pinyin = "hǎo",
+                        Translation = "good"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "大",
+                        Pinyin = "dà",
+                        Translation = "big"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "小",
+                        Pinyin = "xiǎo",
+                        Translation = "small"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "多",
+                        Pinyin = "duō",
+                        Translation = "many, much"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "少",
+                        Pinyin = "shǎo",
+                        Translation = "few, little"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "冷",
+                        Pinyin = "lěng",
+                        Translation = "cold"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "热",
+                        Pinyin = "rè",
+                        Translation = "hot"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "高兴",
+                        Pinyin = "gāoxìng",
+                        Translation = "happy"
+                      },
+                      new Hieroglyph
+                      {
+                        ChineseWord = "漂亮",
+                        Pinyin = "piàoliàng",
+                        Translation = "beautiful"
                       },
                       new Hieroglyph
                       {
