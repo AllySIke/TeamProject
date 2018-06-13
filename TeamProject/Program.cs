@@ -42,7 +42,7 @@ namespace TeamProject
                 };
                 foreach (var h in Hs)
                 {
-                    context.Hieroglyphs.AddOrUpdate(h);
+                    context.Hieroglyphs.AddOrUpdate(u => u.ChineseWord, h);
                 }
                 context.SaveChanges();
             }

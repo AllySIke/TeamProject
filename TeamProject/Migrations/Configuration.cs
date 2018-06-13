@@ -2,6 +2,7 @@ namespace TeamProject.Migrations
 {
     using IronOcr.Languages;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -19,6 +20,8 @@ namespace TeamProject.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            Program program = new Program();
+            program.Update();
         }
     }
 }

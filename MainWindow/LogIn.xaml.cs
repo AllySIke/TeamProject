@@ -25,8 +25,6 @@ namespace MainWindow
         public LogIn()
         {
             InitializeComponent();
-            Program program = new Program();
-            program.Update();
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
