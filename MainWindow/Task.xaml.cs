@@ -43,11 +43,7 @@ namespace MainWindow
             try
             {
                 //чего-то не хватает
-                System.Threading.Thread.Sleep(10000);
-                VarOne.Background = new SolidColorBrush(Colors.Bisque);
-                VarTwo.Background = new SolidColorBrush(Colors.Bisque);
-                VarThree.Background = new SolidColorBrush(Colors.Bisque);
-                VarFour.Background = new SolidColorBrush(Colors.Bisque);
+                //System.Threading.Thread.Sleep(10000);
 
                 using (var context = new Context())
                 {
@@ -163,10 +159,13 @@ namespace MainWindow
             }
             if (amountOfQuestionsPassed < 20)
             {
+                Task.Delay(10000);
+                VarOne.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
+                //Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
@@ -188,10 +187,13 @@ namespace MainWindow
             }
             if (amountOfQuestionsPassed < 20)
             {
+                Task.Delay(10000);
+                VarTwo.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
+                Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
@@ -213,10 +215,13 @@ namespace MainWindow
             }
             if (amountOfQuestionsPassed < 20)
             {
+                Task.Delay(10000);
+                VarThree.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
             else
             {
+                Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
@@ -230,6 +235,7 @@ namespace MainWindow
                 || hieroglyph.Translation == VarFour.Content.ToString())
             {
                 RightAnswers();
+                VarFour.Background = new SolidColorBrush(Colors.Green);
             }
             else
             {
@@ -237,11 +243,13 @@ namespace MainWindow
             }
             if (amountOfQuestionsPassed < 20)
             {
+                Task.Delay(10000); ;
+                VarFour.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
-                VarFour.Background = new SolidColorBrush(Colors.Green);
             }
             else
             {
+                Task.Delay(10000);
                 var congratulation = new Congratulation(howManyRightAnsweres, user);
                 congratulation.Show();
                 this.Close();
