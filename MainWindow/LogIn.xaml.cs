@@ -36,9 +36,9 @@ namespace MainWindow
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            if (emailBox.Text!=null)
+            if (emailBox.Text!="")
             {
-                if(passwordBox.Password!=null)
+                if(passwordBox.Password!="")
                 {
                     var encrypt = new Encryption();
                     var person = new User()
@@ -46,20 +46,28 @@ namespace MainWindow
                         Email = emailBox.Text,
                         Password = encrypt.GetHash(passwordBox.Password)
                     };
-                    using (var context = new Context())
+                    try
                     {
-                        var user = context.Users.FirstOrDefault(p => p.Email == person.Email && p.Password == person.Password);
+                        using (var context = new Context())
+                        {
+                            var user = context.Users.FirstOrDefault(p => p.Email == person.Email && p.Password == person.Password);
 
-                        if (user != null)
-                        {
-                            var taskChoosing = new TaskChoosing(user);
-                            taskChoosing.Show();
-                            this.Close();
+                            if (user != null)
+                            {
+                                var taskChoosing = new TaskChoosing(user);
+                                taskChoosing.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No such user!!!1");
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("No such user!!!1");
-                        }
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Please check", "Something's wrong with the DataBase!");
+                        throw;
                     }
                 }
                 else

@@ -71,40 +71,48 @@ namespace MainWindow
                     {
                         if (password.Password != "")
                         {
-                            using (var context = new Context())
+                            try
                             {
-                                var encrypt = new Encryption();
-                                if (!context.Users.Any(u => u.Email == email.Text))
+                                using (var context = new Context())
                                 {
-                                    User user = new User
+                                    var encrypt = new Encryption();
+                                    if (!context.Users.Any(u => u.Email == email.Text))
                                     {
-                                        FullName = name.Text,
-                                        Email = email.Text,
-                                        Password = encrypt.GetHash(password.Password)
-                                    };
-                                    context.Users.AddOrUpdate(user);
-                                    
-                                    foreach(var hierogl in context.Hieroglyphs)
-                                    {
-                                        context.Favourites.AddOrUpdate (new Favourite
+                                        User user = new User
                                         {
-                                            Hieroglyph = hierogl.ChineseWord,
-                                            TaskOneRight = false,
-                                            TaskTwoRight = false,
-                                            TaskThreeRight = false,
-                                            UserMail = user.Email
-                                        });
-                                    };
-                                    context.SaveChanges();
+                                            FullName = name.Text,
+                                            Email = email.Text,
+                                            Password = encrypt.GetHash(password.Password)
+                                        };
+                                        context.Users.AddOrUpdate(user);
 
-                                    var logIn = new LogIn();
-                                    logIn.Show();
-                                    this.Close();
+                                        foreach (var hierogl in context.Hieroglyphs)
+                                        {
+                                            context.Favourites.AddOrUpdate(new Favourite
+                                            {
+                                                Hieroglyph = hierogl.ChineseWord,
+                                                TaskOneRight = false,
+                                                TaskTwoRight = false,
+                                                TaskThreeRight = false,
+                                                UserMail = user.Email
+                                            });
+                                        };
+                                        context.SaveChanges();
+
+                                        var logIn = new LogIn();
+                                        logIn.Show();
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("This email is already registered, please choose another");
+                                    }
                                 }
-                                else
-                                {
-                                    MessageBox.Show("This email is already registered, please choose another");
-                                }
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("Please check", "Something's wrong with the DataBase!");
+                                throw;
                             }
                         }
                         else

@@ -30,21 +30,21 @@ namespace MainWindow
 
         private void Piniyn_Click(object sender, RoutedEventArgs e)
         {
-            var task = new Task(1, user);
+            var task = new Tasks(1, user);
             task.Show();
             this.Close();
         }
 
         private void Hieroglyph_Click(object sender, RoutedEventArgs e)
         {
-            var task = new Task(2, user);
+            var task = new Tasks(2, user);
             task.Show();
             this.Close();
         }
 
         private void Translation_Click(object sender, RoutedEventArgs e)
         {
-            var task = new Task(3, user);
+            var task = new Tasks(3, user);
             task.Show();
             this.Close();
         }

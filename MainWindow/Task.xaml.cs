@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace MainWindow
     /// <summary>
     /// Логика взаимодействия для Task.xaml
     /// </summary>
-    public partial class Task : Window
+    public partial class Tasks : Window
     {
         int howManyRightAnsweres = 0;
         int amountOfQuestionsPassed = 0;
@@ -29,7 +30,7 @@ namespace MainWindow
         List<Hieroglyph> hieroglyphs;
         int task;
 
-        public Task(int _task, User _user)
+        public Tasks(int _task, User _user)
         {
             InitializeComponent();
             user = _user;
@@ -39,14 +40,21 @@ namespace MainWindow
 
         private void Method(out List<Hieroglyph>hieroglyphs, out Hieroglyph hieroglyph)
         {
-            using (var context = new Context())
+            System.Threading.Thread.Sleep(3000);
+            VarOne.Background = new SolidColorBrush(Colors.Lavender);
+            VarTwo.Background = new SolidColorBrush(Colors.Lavender);
+            VarThree.Background = new SolidColorBrush(Colors.Lavender);
+            VarFour.Background = new SolidColorBrush(Colors.Lavender);
+            try
             {
-                hieroglyph = null;
-                hieroglyphs = new List<Hieroglyph>();
-                try
+                using (var context = new Context())
                 {
+                    hieroglyph = null;
+                    hieroglyphs = new List<Hieroglyph>();
                     if (task == 1)
                     {
+                        if(context.Favourites.Where(h => h.TaskOneRight == false
+                    && h.UserMail == user.Email).FirstOrDefault() != null)
                         foreach (var hierogl in context.Favourites.Where(h => h.TaskOneRight == false
                     && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
                         {
@@ -55,6 +63,8 @@ namespace MainWindow
                     }
                     if (task == 2)
                     {
+                        if(context.Favourites.Where(h => h.TaskTwoRight == false
+                    && h.UserMail == user.Email).FirstOrDefault() != null)
                         foreach (var hierogl in context.Favourites.Where(h => h.TaskTwoRight == false
                     && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
                         {
@@ -63,6 +73,8 @@ namespace MainWindow
                     }
                     if (task == 3)
                     {
+                        if (context.Favourites.Where(h => h.TaskThreeRight == false
+                     && h.UserMail == user.Email).FirstOrDefault() != null)
                         foreach (var hierogl in context.Favourites.Where(h => h.TaskThreeRight == false
                     && h.UserMail == user.Email).OrderBy(X => Guid.NewGuid()).Take(4).ToList())
                         {
@@ -106,22 +118,31 @@ namespace MainWindow
                         Question.Text = hieroglyph.ChineseWord;
                     };
                 }
-                catch(Exception)
-                {
-                    MessageBox.Show("You have already completed all such tasks with the hieroglyphs for the HSK I!");
-                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please check", "Something's wrong with the DataBase!");
+                throw;
             }
         }
 
         private void RightAnswers()
         {
             howManyRightAnsweres += 1;
-            using (var context = new Context())
+            try
             {
-                var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
-                h.TaskOneRight = true;
-                context.Favourites.AddOrUpdate(h);
-                context.SaveChanges();
+                using (var context = new Context())
+                {
+                    var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
+                    h.TaskOneRight = true;
+                    context.Favourites.AddOrUpdate(h);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please check", "Something's wrong with the DataBase!");
+                throw;
             }
         }
 
@@ -132,6 +153,11 @@ namespace MainWindow
                 || hieroglyph.Translation == VarOne.Content.ToString())
             {
                 RightAnswers();
+                VarOne.Background = new SolidColorBrush(Colors.Green);
+            }
+            else
+            {
+                VarOne.Background = new SolidColorBrush(Colors.Red);
             }
             if (amountOfQuestionsPassed < 20)
             {
@@ -152,6 +178,11 @@ namespace MainWindow
                 || hieroglyph.Translation == VarTwo.Content.ToString())
             {
                 RightAnswers();
+                VarTwo.Background = new SolidColorBrush(Colors.Green);
+            }
+            else
+            {
+                VarTwo.Background = new SolidColorBrush(Colors.Red);
             }
             if (amountOfQuestionsPassed < 20)
             {

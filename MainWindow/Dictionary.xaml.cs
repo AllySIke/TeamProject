@@ -27,17 +27,26 @@ namespace MainWindow
             InitializeComponent();
             user = _user;
             List<Hieroglyph> hieroglyphs = new List<Hieroglyph>();
-            using (var context = new Context())
+            try
             {
-                foreach(var favo in (from h in context.Favourites.Where(u => u.UserMail == user.Email
-                              && (u.TaskOneRight == false || u.TaskTwoRight == false
-                              || u.TaskThreeRight == false))
-                               select h).ToList())
+                using (var context = new Context())
                 {
-                    hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == favo.Hieroglyph));
-                }
+                    foreach (var favo in (from h in context.Favourites.Where(u => u.UserMail == user.Email
+                                   && (u.TaskOneRight == false || u.TaskTwoRight == false
+                                   || u.TaskThreeRight == false))
+                                          select h).ToList())
+                    {
+                        hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == favo.Hieroglyph));
+                    }
 
+                }
             }
+            catch (Exception)
+            { 
+                MessageBox.Show("Please check", "Something's wrong with the DataBase!");
+                throw;
+            }
+            
             UnknownWords.ItemsSource = null;
             UnknownWords.ItemsSource = hieroglyphs;
         }
