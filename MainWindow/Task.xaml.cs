@@ -235,15 +235,18 @@ namespace MainWindow
                 || hieroglyph.Translation == VarFour.Content.ToString())
             {
                 RightAnswers();
+                VarFour.Background = null;
                 VarFour.Background = new SolidColorBrush(Colors.Green);
             }
             else
             {
+                VarFour.Background = null;
                 VarFour.Background = new SolidColorBrush(Colors.Red);
             }
             if (amountOfQuestionsPassed < 20)
             {
                 Task.Delay(10000); ;
+                VarFour.Background = null;
                 VarFour.Background = new SolidColorBrush(Colors.Bisque);
                 Method(out hieroglyphs, out hieroglyph);
             }
