@@ -119,7 +119,6 @@ namespace MainWindow
             using (var context = new Context())
             {
                 var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
-                //context.Favourites.Remove(h);
                 h.TaskOneRight = true;
                 context.Favourites.AddOrUpdate(h);
                 context.SaveChanges();
@@ -133,10 +132,6 @@ namespace MainWindow
                 || hieroglyph.Translation == VarOne.Content.ToString())
             {
                 RightAnswers();
-            }
-            else
-            {
-                //показать что ответ неверный???????????
             }
             if (amountOfQuestionsPassed < 20)
             {
@@ -158,10 +153,6 @@ namespace MainWindow
             {
                 RightAnswers();
             }
-            else
-            {
-                //показать что ответ неверный???????????
-            }
             if (amountOfQuestionsPassed < 20)
             {
                 Method(out hieroglyphs, out hieroglyph);
@@ -181,10 +172,6 @@ namespace MainWindow
                 || hieroglyph.Translation == VarThree.Content.ToString())
             {
                 RightAnswers();
-            }
-            else
-            {
-                //показать что ответ неверный???????????
             }
             if (amountOfQuestionsPassed < 20)
             {
@@ -206,10 +193,6 @@ namespace MainWindow
             {
                 RightAnswers();
             }
-            else
-            {
-                //показать что ответ неверный???????????
-            }
             if (amountOfQuestionsPassed < 20)
             {
                 Method(out hieroglyphs, out hieroglyph);
@@ -224,7 +207,6 @@ namespace MainWindow
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            //спросить у юзера уверен ли он выйти/закончить
             (new TaskChoosing(user)).Show();
             this.Close();
         }
