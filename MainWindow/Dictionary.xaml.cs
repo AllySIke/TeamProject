@@ -26,18 +26,20 @@ namespace MainWindow
         {
             InitializeComponent();
             user = _user;
-            List<Favourite> hieroglyphs;
+            List<Hieroglyph> hieroglyphs = new List<Hieroglyph>();
             using (var context = new Context())
             {
-                hieroglyphs = (from h in context.Favourites.Where(u => u.UserMail == user.Email
+                foreach(var favo in (from h in context.Favourites.Where(u => u.UserMail == user.Email
                               && (u.TaskOneRight == false || u.TaskTwoRight == false
                               || u.TaskThreeRight == false))
-                               select h).ToList();
+                               select h).ToList())
+                {
+                    hieroglyphs.Add(context.Hieroglyphs.FirstOrDefault(h => h.ChineseWord == favo.Hieroglyph));
+                }
+
             }
-            //????????????????UnknownWords.ItemsSource = null;
-            //1!!!!!!!111!!!!!1111!
-            //if(!UnknownWords.HasItems)
-            //????????????????????UnknownWords.ItemsSource = hieroglyphs;
+            UnknownWords.ItemsSource = null;
+            UnknownWords.ItemsSource = hieroglyphs;
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

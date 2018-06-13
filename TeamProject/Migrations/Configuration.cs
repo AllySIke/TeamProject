@@ -1,5 +1,6 @@
 namespace TeamProject.Migrations
 {
+    using IronOcr.Languages;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;

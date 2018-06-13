@@ -63,13 +63,13 @@ namespace MainWindow
 
         private void Registration_Click(object sender, RoutedEventArgs e)
         {
-            if (name.Text != null)
+            if (name.Text != "")
             {
-                if (email.Text != null)
+                if (email.Text != "")
                 {
                     if (EMailCheck(email.Text))
                     {
-                        if (password.Password != null)
+                        if (password.Password != "")
                         {
                             using (var context = new Context())
                             {

@@ -59,9 +59,9 @@
     <Compile Include="Context.cs" />
     <Compile Include="Favourite.cs" />
     <Compile Include="Hieroglyph.cs" />
-    <Compile Include="Migrations\201806122102280_first.cs" />
-    <Compile Include="Migrations\201806122102280_first.Designer.cs">
-      <DependentUpon>201806122102280_first.cs</DependentUpon>
+    <Compile Include="Migrations\201806130013177_first.cs" />
+    <Compile Include="Migrations\201806130013177_first.Designer.cs">
+      <DependentUpon>201806130013177_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -74,8 +74,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806122102280_first.resx">
-      <DependentUpon>201806122102280_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806130013177_first.resx">
+      <DependentUpon>201806130013177_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

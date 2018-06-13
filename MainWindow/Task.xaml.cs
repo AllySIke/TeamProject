@@ -119,7 +119,7 @@ namespace MainWindow
             using (var context = new Context())
             {
                 var h = context.Favourites.FirstOrDefault(f => f.UserMail == user.Email && f.Hieroglyph == hieroglyph.ChineseWord);
-                context.Favourites.Remove(h);
+                //context.Favourites.Remove(h);
                 h.TaskOneRight = true;
                 context.Favourites.AddOrUpdate(h);
                 context.SaveChanges();
