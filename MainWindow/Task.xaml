@@ -24,12 +24,12 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Width="130" Height="70" Click="VarOne_Click" Name="VarOne" Grid.Column="0" Grid.Row="0"></Button>
-            <Button Width="130" Height="70" Click="VarTwo_Click" Name="VarTwo" Grid.Column="0" Grid.Row="1"></Button>
-            <Button Width="130" Height="70" Click="VarThree_Click" Name="VarThree" Grid.Column="1" Grid.Row="0"></Button>
-            <Button Width="130" Height="70" Click="VarFour_Click" Name="VarFour" Grid.Column="1" Grid.Row="1"></Button>
+            <Button Background="Bisque" Width="130" Height="70" Click="VarOne_Click" Name="VarOne" Grid.Column="0" Grid.Row="0"></Button>
+            <Button Background="Bisque" Width="130" Height="70" Click="VarTwo_Click" Name="VarTwo" Grid.Column="0" Grid.Row="1"></Button>
+            <Button Background="Bisque" Width="130" Height="70" Click="VarThree_Click" Name="VarThree" Grid.Column="1" Grid.Row="0"></Button>
+            <Button Background="Bisque" Width="130" Height="70" Click="VarFour_Click" Name="VarFour" Grid.Column="1" Grid.Row="1"></Button>
         </Grid>
-        <Button Grid.Row="3"  Width="100" Height="30" FontSize="20" Click="Exit_Click" Margin="5" HorizontalAlignment="Right" Content="Exit" Name="Exit"></Button>
+        <Button Background="Bisque" Grid.Row="3"  Width="100" Height="30" FontSize="20" Click="Exit_Click" Margin="5" HorizontalAlignment="Right" Content="Exit" Name="Exit"></Button>
     </Grid>
 </Window>
 
