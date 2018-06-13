@@ -25,7 +25,7 @@ namespace MainWindow
         {
             user = _user;
             InitializeComponent();
-            Result.Text = $"Congratulations! Your result is {result}/20. Would you like to open the dictionary?";
+            Result.Text = $"Congratulations, {_user.FullName}! Your result is {result}/20. Would you like to open the dictionary?";
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
