@@ -3,7 +3,7 @@ namespace TeamProject.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class first : DbMigration
+    public partial class Base : DbMigration
     {
         public override void Up()
         {

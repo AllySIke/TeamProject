@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainWindow"
         mc:Ignorable="d"
-        Title="TaskChoosing" MaxHeight="455" MaxWidth="355" MinHeight="445" MinWidth="345" Height="450" Width="350">
+        Title="TaskChoosing" MaxHeight="455" MaxWidth="355" MinHeight="455" MinWidth="355" Height="455" Width="355">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="51*"/>

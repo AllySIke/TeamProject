@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainWindow"
         mc:Ignorable="d"
-        Title="Log in" Height="350" Width="525" MaxHeight="360" MinHeight="340" MaxWidth="535" MinWidth="515">
+        Title="Log in" Height="360" Width="535" MaxHeight="360" MinHeight="360" MaxWidth="535" MinWidth="535">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="51*"/>

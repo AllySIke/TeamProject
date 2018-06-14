@@ -10,6 +10,6 @@
         <Image x:Name="image" HorizontalAlignment="Center" Height="100" Margin="130,100,0,0" VerticalAlignment="Top" Width="250" Source="https://avatanplus.com/files/resources/mid/58d0c20f6427c15aef760c32.png"/>
         <TextBlock HorizontalAlignment="Center" TextAlignment ="Center" TextWrapping="Wrap" Name="Result" FontSize="20" Margin="0,40,0,100" ></TextBlock>
         <Button Background="Pink" Width="130" Height="70" Margin="0,120,240,0" Content="Open my dictionary" Click="Dictionary_Click"></Button>
-        <Button  Background="Pink" Width="50" Height="30" Margin="300,180,0,0" Content="Exit" Click="Exit_Click"></Button>
+        <Button  Background="Pink" Width="50" Height="30" Margin="300,180,0,5" Content="Exit" Click="Exit_Click"></Button>
     </Grid>
 </Window>

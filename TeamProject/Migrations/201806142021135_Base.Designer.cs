@@ -7,13 +7,13 @@ namespace TeamProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class first : IMigrationMetadata
+    public sealed partial class Base : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(first));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Base));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806130013177_first"; }
+            get { return "201806142021135_Base"; }
         }
         
         string IMigrationMetadata.Source

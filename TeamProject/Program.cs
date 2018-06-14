@@ -67,13 +67,13 @@ namespace TeamProject
                      {
                         ChineseWord = "那 (那儿)",
                         Pinyin = "nà (nàr)",
-                        Translation = "	there, that"
+                        Translation = "there, that"
                      },
                      new Hieroglyph
                      {
                         ChineseWord = "哪（哪儿）",
                         Pinyin = "nǎ (nǎr)",
-                        Translation = "	where"
+                        Translation = "where"
                      },
                      new Hieroglyph
                      {
